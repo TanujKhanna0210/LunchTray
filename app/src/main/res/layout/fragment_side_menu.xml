@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["salad"].name}'
-                    android:checked="@{viewModel.side.equals(@string/salad)}"
+
                     android:onClick="@{() -> viewModel.setSide(@string/salad)}"
                     tools:text="Side 1" />
 
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["soup"].name}'
-                    android:checked="@{viewModel.side.equals(@string/soup)}"
+
                     android:onClick="@{() -> viewModel.setSide(@string/soup)}"
                     tools:text="Side 2" />
 
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["potatoes"].name}'
-                    android:checked="@{viewModel.side.equals(@string/potatoes)}"
+
                     android:onClick="@{() -> viewModel.setSide(@string/potatoes)}"
                     tools:text="Side 3" />
 
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["rice"].name}'
-                    android:checked="@{viewModel.side.equals(@string/rice)}"
+
                     android:onClick="@{() -> viewModel.setSide(@string/rice)}"
                     tools:text="Side 4" />
 

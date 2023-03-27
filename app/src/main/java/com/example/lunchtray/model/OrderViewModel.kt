@@ -77,7 +77,7 @@ class OrderViewModel : ViewModel() {
         // TODO: if _subtotal.value is not null subtract the previous entree price from the current
         //  subtotal value. This ensures that we only charge for the currently selected entree.
         if(_subtotal.value != null)
-            _subtotal.value = _subtotal.value!! - previousEntreePrice
+            _subtotal.value = _subtotal.value?.minus(previousEntreePrice)
 
         // TODO: set the current entree value to the menu item corresponding to the passed in string
         _entree.value = menuItems[entree]
@@ -96,7 +96,7 @@ class OrderViewModel : ViewModel() {
         // TODO: if _subtotal.value is not null subtract the previous side price from the current
         //  subtotal value. This ensures that we only charge for the currently selected side.
         if(_subtotal.value != null)
-            _subtotal.value = _subtotal.value!! - previousSidePrice
+            _subtotal.value = _subtotal.value?.minus(previousSidePrice)
 
         // TODO: set the current side value to the menu item corresponding to the passed in string
         _side.value = menuItems[side]
@@ -117,7 +117,7 @@ class OrderViewModel : ViewModel() {
         //  the current subtotal value. This ensures that we only charge for the currently selected
         //  accompaniment.
         if(_subtotal.value != null)
-            _subtotal.value = _subtotal.value!! - previousAccompanimentPrice
+            _subtotal.value = _subtotal.value?.minus(previousAccompanimentPrice)
 
         // TODO: set the current accompaniment value to the menu item corresponding to the passed in
         //  string
@@ -134,7 +134,7 @@ class OrderViewModel : ViewModel() {
         //  added item.
         //  Otherwise, set _subtotal.value to equal the price of the item.
         if(_subtotal.value != null)
-            _subtotal.value = _subtotal.value!! + itemPrice
+            _subtotal.value = _subtotal.value?.plus(itemPrice)
         else
             _subtotal.value = itemPrice
 
@@ -147,9 +147,9 @@ class OrderViewModel : ViewModel() {
      */
     fun calculateTaxAndTotal() {
         // TODO: set _tax.value based on the subtotal and the tax rate.
-        _tax.value = taxRate * _subtotal.value!!
+        _tax.value = _subtotal.value?.times(taxRate)
         // TODO: set the total based on the subtotal and _tax.value.
-        _total.value = _subtotal.value!! + _tax.value!!
+        _total.value = _subtotal.value?.plus(_tax.value!!)
     }
 
     /**
@@ -157,6 +157,9 @@ class OrderViewModel : ViewModel() {
      */
     fun resetOrder() {
         // TODO: Reset all values associated with an order
+        previousEntreePrice = 0.0
+        previousSidePrice = 0.0
+        previousAccompanimentPrice = 0.0
         _entree.value = null
         _side.value = null
         _accompaniment.value = null

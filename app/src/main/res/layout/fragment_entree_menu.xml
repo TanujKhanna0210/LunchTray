@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["cauliflower"].name}'
-                    android:checked="@{viewModel.entree.equals(@string/cauliflower)}"
+
                     android:onClick="@{() -> viewModel.setEntree(@string/cauliflower)}"
                     tools:text="Entree 1" />
 
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["chili"].name}'
-                    android:checked="@{viewModel.entree.equals(@string/chili)}"
+
                     android:onClick="@{() -> viewModel.setEntree(@string/chili)}"
                     tools:text="Entree 2" />
 
@@ -122,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["pasta"].name}'
-                    android:checked="@{viewModel.entree.equals(@string/pasta)}"
+
                     android:onClick="@{() -> viewModel.setEntree(@string/pasta)}"
                     tools:text="Entree 3" />
 
@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["skillet"].name}'
-                    android:checked="@{viewModel.entree.equals(@string/skillet)}"
+
                     android:onClick="@{() -> viewModel.setEntree(@string/skillet)}"
                     tools:text="Entree 4" />
 
